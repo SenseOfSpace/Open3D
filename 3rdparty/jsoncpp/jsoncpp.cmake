@@ -7,7 +7,7 @@ ExternalProject_Add(
     GIT_TAG 1.9.4
     GIT_SHALLOW ON  # Do not download the history.
     UPDATE_COMMAND ""
-    PATCH_COMMAND git apply ${Open3D_3RDPARTY_DIR}/jsoncpp/0001-optional-CXX11-ABI-and-MSVC-runtime.patch
+    PATCH_COMMAND git apply --ignore-space-change --ignore-whitespace ${Open3D_3RDPARTY_DIR}/jsoncpp/0001-optional-CXX11-ABI-and-MSVC-runtime.patch
     CMAKE_ARGS
         -DCMAKE_INSTALL_PREFIX=<INSTALL_DIR>
         -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
