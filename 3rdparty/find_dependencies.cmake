@@ -466,12 +466,14 @@ open3d_find_package_3rdparty_library(3rdparty_threads
 # Assimp
 include(${Open3D_3RDPARTY_DIR}/assimp/assimp.cmake)
 open3d_import_3rdparty_library(3rdparty_assimp
+    PUBLIC
     INCLUDE_DIRS ${ASSIMP_INCLUDE_DIR}
+    INCLUDE_ALL
     LIB_DIR      ${ASSIMP_LIB_DIR}
     LIBRARIES    ${ASSIMP_LIBRARIES}
     DEPENDS      ext_assimp
 )
-list(APPEND Open3D_3RDPARTY_PRIVATE_TARGETS Open3D::3rdparty_assimp)
+list(APPEND Open3D_3RDPARTY_PUBLIC_TARGETS Open3D::3rdparty_assimp)
 
 # OpenMP
 if(WITH_OPENMP)
